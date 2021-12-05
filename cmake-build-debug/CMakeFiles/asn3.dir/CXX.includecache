@@ -7,6 +7,14 @@
 #IncludeRegexTransform: 
 
 C:/Users/imcoo/CLionProjects/asn3/Vector.h
+Vector.tpp
+C:/Users/imcoo/CLionProjects/asn3/Vector.tpp
+
+C:/Users/imcoo/CLionProjects/asn3/Vector.tpp
+iostream
+-
+Vector.h
+C:/Users/imcoo/CLionProjects/asn3/Vector.h
 
 C:/Users/imcoo/CLionProjects/asn3/testProgram.cpp
 iostream

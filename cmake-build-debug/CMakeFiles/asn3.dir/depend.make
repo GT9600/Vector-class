@@ -3,4 +3,5 @@
 
 CMakeFiles/asn3.dir/testProgram.cpp.obj: \
  ../Vector.h \
+ ../Vector.tpp \
  ../testProgram.cpp

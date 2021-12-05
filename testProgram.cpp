@@ -11,17 +11,18 @@ int findMinIndex(int arr[], int lastIndex, int index) {
 }
 
 //function to sort ints
-void selectionSort(int arr[], int len);
-void selectionSort(int arr[], int len, int index) {
-    for (int i = 0; i < len; i++){
-        int min = arr[i];
-        int minIndex = findMinIndex(arr, len - 1, i);
-        if (minIndex != i) {
-            int temp = arr[i];
-            arr[i] = arr[minIndex];
+void selectionSort(int arr[], int lastIndex, int index);
+void selectionSort(int arr[], int lastIndex, int index){
+    if (index == lastIndex){ //to declare the list is sorted
+        return;
+    }
+        int minIndex = findMinIndex(arr, lastIndex, index);
+        if (minIndex != index) {
+            int temp = arr[index];
+            arr[index] = arr[minIndex];
             arr[minIndex] = temp;
         }
-     }
+    selectionSort(arr, lastIndex, index+1);
 }
 
 int main(){
