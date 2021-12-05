@@ -9,8 +9,7 @@ template <typename T> class Vector {
 private:
     int* elements; //• A container (dynamic array) for storing the items of the same type (data)
     int size; //• A variable that keeps track of valid items in the vector (size)
-    int capacity = 1; //A variable that keeps track of the capacity of container (capacity)
-
+    int capacity; //A variable that keeps track of the capacity of container (capacity)
 public:
     Vector();
     //Contractor to create a vector with the given capacity
@@ -40,4 +39,5 @@ public:
 
 };
 
+#include "Vector.tpp"
 #endif //ASN3_VECTOR_H

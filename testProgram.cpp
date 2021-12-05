@@ -6,7 +6,7 @@ using namespace std;
 
 //function to sort ints
 int selectionSort(int arr[], int len);
-int selectionSort(int arr[], int len){
+int selectionSort(int arr[], int len) {
     for (int i = 0; i < len; i++){
         int min = arr[i];
         int minIndex = i;
@@ -21,7 +21,7 @@ int selectionSort(int arr[], int len){
         }
      }
 
-
+     return 1; // Placeholder
 }
 
 int main(){
@@ -29,7 +29,7 @@ int main(){
     int len = 10;
     int arr[10];
 
-    int qTwo[5]{9, 6, 4, 2, 3};
+    int qTwo[5] = {9, 6, 4, 2, 3};
     int length = 5;
     cout << "your array before sorting " << qTwo << endl;
     cout << "your array sorted.. " << selectionSort(qTwo, length) << endl;
