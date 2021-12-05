@@ -2,26 +2,26 @@
 #include "Vector.h"
 using namespace std;
 //Contractor to create a vector with default capacity
-
+int findMinIndex(int arr[], int lastIndex, int index) {
+    if (index == lastIndex) {
+        return index;
+    }
+    int min = findMinIndex(arr, lastIndex, index + 1);
+    return ((arr[min] < arr[index])? min : index);
+}
 
 //function to sort ints
-int selectionSort(int arr[], int len);
-int selectionSort(int arr[], int len) {
+void selectionSort(int arr[], int len);
+void selectionSort(int arr[], int len, int index) {
     for (int i = 0; i < len; i++){
         int min = arr[i];
-        int minIndex = i;
-        for (int j = (i + 1); j < len; j++){
-            if (min > arr[j]){
-                min = arr[j];
-                minIndex = j;
-            }
-        }
-        if (minIndex != i){
-            throw invalid_argument("index does not equal element in place");
+        int minIndex = findMinIndex(arr, len - 1, i);
+        if (minIndex != i) {
+            int temp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = temp;
         }
      }
-
-     return 1; // Placeholder
 }
 
 int main(){
@@ -31,9 +31,17 @@ int main(){
 
     int qTwo[5] = {9, 6, 4, 2, 3};
     int length = 5;
-    cout << "your array before sorting " << qTwo << endl;
-    cout << "your array sorted.. " << selectionSort(qTwo, length) << endl;
-
+    cout << "your array before sorting\n";
+    for (int i = 0; i < length; i++) {
+        cout << qTwo[i];
+    }
+    cout << endl;
+    selectionSort(qTwo, length, 0);
+    cout << "Your array after sorting\n";
+    for (int i = 0; i < length; i++) {
+        cout << qTwo[i];
+    }
+    cout << endl;
 
 
         Vector<int> newVariable;
