@@ -128,6 +128,30 @@ asn3/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\asn3.dir\build.make CMakeFiles/asn3.dir/build
 .PHONY : asn3/fast
 
+Vector.obj: Vector.cpp.obj
+.PHONY : Vector.obj
+
+# target to build an object file
+Vector.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\asn3.dir\build.make CMakeFiles/asn3.dir/Vector.cpp.obj
+.PHONY : Vector.cpp.obj
+
+Vector.i: Vector.cpp.i
+.PHONY : Vector.i
+
+# target to preprocess a source file
+Vector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\asn3.dir\build.make CMakeFiles/asn3.dir/Vector.cpp.i
+.PHONY : Vector.cpp.i
+
+Vector.s: Vector.cpp.s
+.PHONY : Vector.s
+
+# target to generate assembly for a file
+Vector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\asn3.dir\build.make CMakeFiles/asn3.dir/Vector.cpp.s
+.PHONY : Vector.cpp.s
+
 testProgram.obj: testProgram.cpp.obj
 .PHONY : testProgram.obj
 
@@ -161,6 +185,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... asn3
+	@echo ... Vector.obj
+	@echo ... Vector.i
+	@echo ... Vector.s
 	@echo ... testProgram.obj
 	@echo ... testProgram.i
 	@echo ... testProgram.s

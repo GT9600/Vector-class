@@ -1,93 +1,39 @@
 #include <iostream>
-#include <cstdlib>
-
+#include "Vector.h"
 using namespace std;
 //Contractor to create a vector with default capacity
-template <typename T> class Vector {
 
-private:
-    int* elements; //• A container (dynamic array) for storing the items of the same type (data)
-    int size; //• A variable that keeps track of valid items in the vector (size)
-    int capacity = 1; //A variable that keeps track of the capacity of container (capacity)
 
-public:
-    Vector(){
-        elements = new T[1];
-        size = 0;
-        capacity = 1;
-    }
-    //Contractor to create a vector with the given capacity
-    explicit Vector(int n) {
-        if (n < 0) {
-            throw invalid_argument(" Out of bounds");
+//function to sort ints
+int selectionSort(int arr[], int len);
+int selectionSort(int arr[], int len){
+    for (int i = 0; i < len; i++){
+        int min = arr[i];
+        int minIndex = i;
+        for (int j = (i + 1); j < len; j++){
+            if (min > arr[j]){
+                min = arr[j];
+                minIndex = j;
+            }
         }
-        capacity = n;
-        elements = new T[n];
-        if (!elements)
-            throw runtime_error(" Elements could not be created ");
-        size = 0;
-    }
-//if size is over capacity, dump the old elements, double the capacity size and create a dynamic array with double the size as before
-
-    void ensureCapacity() {
-        if (size >= capacity) {
-            T *old = elements;
-            capacity = 2 * size;
-            elements = new T[size * 2];
-
-            for (int i = 0; i < size; i++)
-                elements[i] = old[i];
-
-            delete[] old;
+        if (minIndex != i){
+            throw invalid_argument("index does not equal element in place");
         }
-    }
+     }
 
-//to add an item at the end of the vector
-    void push(T value) {
-        ensureCapacity();
-        elements[size++] = value;
-    }
 
-//to remove and return the last valid element of the vector
-    T pop() {
-        if (size <= 0)
-            throw runtime_error("SOrry, no elements left in vector!!");
+}
 
-        return elements[--size];
-    }
-
-// //to return the current size
-    int getSize() const {
-        return size;
-    }
-
-// to return the value of vector in the given index
-
-    T get(int index){
-        if (index < 0){
-            throw invalid_argument("index is less than 0");
-        }
-        if (index < 0 || index >= size) {
-            throw invalid_argument("index out of bounds"); //exception handling
-        }
-        return elements[index];
-    }
-//to update the item in the given index with value
-
-    void set(int index, int value){
-        if (index < 0 || index > size) //throwing exceptions
-            throw invalid_argument("index out of bounds");
-
-        elements[index] = value;
-    }
-//– to return the capacity
-    int getCap(){
-        return capacity;
-    }
-};
-
-int main() {
+int main(){
     try {
+    int len = 10;
+    int arr[10];
+
+    int qTwo[5]{9, 6, 4, 2, 3};
+    int length = 5;
+    cout << "your array before sorting " << qTwo << endl;
+    cout << "your array sorted.. " << selectionSort(qTwo, length) << endl;
+
 
 
         Vector<int> newVariable;
@@ -107,6 +53,9 @@ int main() {
         cout << newVariable.getSize() << " :Get size" << endl << endl;
         cout << newVariable.getCap() << " :Get capacity" << endl << endl;
         cout << newVariable.pop() << " :POP" << endl << endl;
+
+        cout << "Question 2 " << endl;
+
     }
     catch (exception &x) {
         cout << "exception encountered: " << endl << x.what() << endl;

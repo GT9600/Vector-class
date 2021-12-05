@@ -6,9 +6,11 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/imcoo/CLionProjects/asn3/Vector.h
+
 C:/Users/imcoo/CLionProjects/asn3/testProgram.cpp
 iostream
 -
-cstdlib
--
+Vector.h
+C:/Users/imcoo/CLionProjects/asn3/Vector.h
 

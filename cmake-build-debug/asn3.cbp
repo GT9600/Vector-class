@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/imcoo/CLionProjects/asn3/Vector.cpp">
+			<Option target="asn3"/>
+		</Unit>
+		<Unit filename="C:/Users/imcoo/CLionProjects/asn3/Vector.h">
+			<Option target="asn3"/>
+		</Unit>
 		<Unit filename="C:/Users/imcoo/CLionProjects/asn3/testProgram.cpp">
 			<Option target="asn3"/>
 		</Unit>
